@@ -11,30 +11,49 @@ export default {
         pageNum: Number,
         pageTotal: Number
     },
-    data()
-    {
+    data() {
         return {
             pagSize: Math.min(this.size, this.pageTotal),
-            pageFrameCur: this.pageNum,
-            pagFrame: new Array(pagSize)
+            pageFrameCur: 0,
+            pagFrame: null,
+            pageNumFirst: this.pageNum
         };
     },
     methods: {
-        selectPage(pagFrameIndex)
-        {
+        selectPage(pagFrameIndex) {
             let index = pagFrameIndex >= 0 ? pagFrameIndex : 0;
-            if(index >= this.pagSize) index = this.pagSize - 1;
-            this.pageFrameCur=index+1;
-            //this.pagFrame=this.pagFrame.map((e,i)=>i==index?)
+            if(index >= this.pagSize - 1) {
+                index = this.pagSize - 1
+                let first = this.pageNumFirst + index;
+                if(first + this.pagSize - 1 > this.pageTotal) {
+                    const newfirst = this.pageTotal - this.pagSize + 1;
+                    index = first - newfirst;
+                    first = newfirst;
+                } else {
+                    index = 0;
+                }
+                this.pageNumFirst = first;
+            }
+            this.pageFrameCur = index;
+            this.setPagFrame();
         },
-        setPagFrame()
-        {
-            for(let i = 0; i < this.pagFrame.length; i++)
-                this.pagFrame[i] = this.pageNumCur + i;
+        setPagFrame() {
+            let frame = new Array(this.pagSize);
+            for(let i = 0; i < frame.length; i++) {
+                const selected = (i == this.pageFrameCur);
+                const page = this.pageNumFirst + i;
+                frame[i] = { pageNum: page, isSelected: selected };
+            }
+            this.pagFrame = frame;
+        },
+        nextPage() {
+            this.selectPage(this.pageFrameCur + 1);
+        },
+        pageNumCur() {
+            return this.pagFrame.find(x => x.isSelected).pageNum;
         }
     },
-    mounted()
-    {
+    mounted() {
         this.setPagFrame();
     },
 }
