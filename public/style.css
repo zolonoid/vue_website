@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    font-family: 'DM Serif Display', serif;
+    font-family: 'Jost', sans-serif;
+} */
+
+img {
+    width: 100%;
+    aspect-ratio: auto;
+}
+
+a {
+    text-decoration: none;
+  }
