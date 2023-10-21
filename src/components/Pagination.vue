@@ -1,6 +1,18 @@
 <template>
-    <div>
-
+    <div class="pagination">
+        <div v-for="(p, i) in pagFrame"
+             @click="selectPage(i)"
+             class="pagination__num"
+             :class="{ pagination__num_selected: p.isSelected }">
+            {{ p.pageNum }}
+        </div>
+        <div class="pagination__next" @click="nextPage">
+            <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52" fill="none">
+                <circle cx="26.5" cy="26" r="25.5" stroke="#CDA274" />
+                <path d="M23.5571 32L29.5 25.3143L23.5571 18.6286" stroke="#292F36" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+            </svg>
+        </div>
     </div>
 </template>
 
@@ -64,8 +76,24 @@ export default {
     display: flex;
     gap: 20px;
 
-    &__num {}
+    &__num {
+        width: 52px;
+        height: 52px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(../assets/pag.png);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    &__next {}
+        &_selected {
+            background-image: url(../assets/curpag.png);
+        }
+    }
+
+    &__next {
+        width: 52px;
+        height: 52px;
+    }
 }
 </style>

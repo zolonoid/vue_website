@@ -22,7 +22,7 @@
         </ArticlesNews>
       </div>
       <div class="blog__news-pagination">
-        <Pagination></Pagination>
+        <Pagination size="3" pageNum="1" pageTotal="10"></Pagination>
       </div>
     </div>
   </div>
