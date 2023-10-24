@@ -6,7 +6,7 @@
                 {{ title }}
             </h1>
             <div class="latest-post__desc">
-                <p v-for="text in texts" class="latest-post__desc-text">
+                <p v-for="(text, i) in texts" :key="i" class="latest-post__desc-text">
                     {{ text }}
                 </p>
             </div>
@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .latest-post {
     width: 100%;
     border-radius: 62px;

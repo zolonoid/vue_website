@@ -22,7 +22,7 @@
         </ArticlesNews>
       </div>
       <div class="blog__news-pagination">
-        <Pagination size="3" pageNum="1" pageTotal="10"></Pagination>
+        <PaginationComp :size="3" :pageNum="1" :pageTotal="10"></PaginationComp>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@
 
 <script>
 import ArticlesNews from '@/components/ArticlesNews.vue'
-import Pagination from '@/components/Pagination.vue';
+import PaginationComp from '@/components/PaginationComp.vue';
 import LatestPost from '@/components/LatestPost.vue'
 
 export default {
@@ -38,7 +38,7 @@ export default {
   components: {
     LatestPost,
     ArticlesNews,
-    Pagination
+    PaginationComp
   },
   data() {
     return {

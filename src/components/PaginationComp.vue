@@ -1,6 +1,7 @@
 <template>
     <div class="pagination">
         <div v-for="(p, i) in pagFrame"
+             :key="i"
              @click="selectPage(i)"
              class="pagination__num"
              :class="{ pagination__num_selected: p.isSelected }">
