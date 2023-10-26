@@ -1,8 +1,8 @@
-@mixin font-dm($color, $size, $height, $spacing: 0) {
+@mixin font-dm($color, $size, $height, $spacing: 0, $style: normal) {
     color: $color;
     font-family: DM Serif Display;
     font-size: $size;
-    font-style: normal;
+    font-style: $style;
     font-weight: 400;
     line-height: $height;
     @if $spacing!=0 {
@@ -10,12 +10,12 @@
     }
 }
 
-@mixin font-jost($color, $size, $height, $spacing: 0) {
+@mixin font-jost($color, $size, $height, $spacing: 0, $weight: 400) {
     color: $color;
     font-family: Jost;
     font-size: $size;
     font-style: normal;
-    font-weight: 400;
+    font-weight: $weight;
     line-height: $height;
 
     @if $spacing!=0 {

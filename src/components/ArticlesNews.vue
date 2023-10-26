@@ -41,6 +41,9 @@ export default {
     border: 1px solid #E7E7E7;
     box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
     padding: 21px 21px 38px 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &:hover {
         background: #F4F0EC;
@@ -87,6 +90,7 @@ export default {
     &__info {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         &-date {
             @include font-jost(#4D5053, 16px, 24px, 0.16px);

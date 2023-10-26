@@ -45,6 +45,7 @@ export default {
 .footer {
     @include content-wrapper;
     display: flex;
+    padding-bottom: 134px;
 
     &__about {
         width: 393px;

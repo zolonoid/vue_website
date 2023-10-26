@@ -12,7 +12,7 @@
                         <p>26 December,2022</p>
                         <p>Interior / Home / Decore</p>
                     </div>
-                    <p class="blog-details__content-text">
+                    <p class="blog-details__content-text" style="margin-bottom: 35px;">
                         Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to
                         popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have
                         suffered alteration in some form, by injecthumour, or randomised words which don't look even
@@ -23,7 +23,7 @@
                         repeat predefined chunks as necessary.
                     </p>
                     <div class="blog-details__content-quotes">
-                        <h1 class="blog-details__content-quotes-title">“</h1>
+                        <h1 class="blog-details__content-quotes-title">”</h1>
                         <p class="blog-details__content-quotes-text">
                             The details are not the details. They make the design.
                         </p>
@@ -31,7 +31,7 @@
                     <h1 class="blog-details__content-title">
                         {{ b.title2 }}
                     </h1>
-                    <p class="blog-details__content-text">
+                    <p class="blog-details__content-text" style="margin-bottom: 24px;">
                         Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to
                         popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have
                         suffered.
@@ -164,6 +164,8 @@ export default {
             height: 539px;
             background-size: cover;
             background-repeat: no-repeat;
+            border-radius: 50px;
+            background-color: #C4C4C4;
             margin-bottom: 46px;
         }
 
@@ -183,11 +185,14 @@ export default {
             height: 365px;
             background-size: cover;
             background-repeat: no-repeat;
+            border-radius: 50px;
+            background: #C4C4C4;
             margin-top: 44px;
             margin-bottom: 35px;
         }
 
         &-quotes {
+            height: 267px;
             border-radius: 50px;
             background: #F4F0EC;
             padding-top: 53px;
@@ -196,16 +201,16 @@ export default {
             margin-bottom: 27px;
             display: flex;
             flex-direction: column;
+            justify-content: flex-end;
             align-items: center;
 
             &-title {
-                @include font-dm(#CDA274, 200px, 250px, 4px);
-                font-style: italic;
+                @include font-dm(#CDA274, 200px, 1px, 4px, italic);
+                text-align: center;
             }
 
             &-text {
-                @include font-dm(#CDA274, 25px, 31.25px, 0.5px);
-                font-style: italic;
+                @include font-dm(#CDA274, 25px, 31.25px, 0.5px, italic);
                 text-align: center;
                 max-width: 345px;
             }

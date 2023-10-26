@@ -132,7 +132,7 @@ export default {
 
 <style lang="scss">
 .home {
-  padding-top: 57px;
+  padding-top: 12px;
   padding-bottom: 96px;
 
   &__banner {
@@ -164,7 +164,7 @@ export default {
     }
 
     &-button {
-      width: 220px;
+      width: 223px;
       border-radius: 18px;
       background: #292F36;
       box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
@@ -175,7 +175,7 @@ export default {
       gap: 10px;
 
       &-text {
-        @include font-jost(#FFF, 18px, 22.5px, 0.36px);
+        @include font-jost(#FFF, 18px, 22.5px, 0.36px, 600);
       }
     }
   }
@@ -224,7 +224,6 @@ export default {
 
   &__news {
     @include content-wrapper;
-    margin-bottom: 96px;
     display: flex;
     flex-direction: column;
     align-items: center;

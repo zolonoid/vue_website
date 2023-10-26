@@ -21,7 +21,8 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 55px;
+    padding-top: 45px;
+    padding-bottom: 45px;
 
     &__logo {
         width: 177px;
