@@ -1,6 +1,7 @@
 <template>
     <div class="slider">
-        <div class="slider__img"></div>
+        <div v-if="isBigImg" class="slider__bigimg" @click="isBigImg=false"></div>
+        <div class="slider__img" @click="isBigImg=true"></div>
         <div class="slider__pngwing">
             <div v-for="(img, i) in imgs" :key="i"
                  class="slider__pngwing-item"
@@ -33,7 +34,8 @@ export default {
         return {
             imgs: this.images.map((v, i) => {
                 return { img: v, selected: i === 0 };
-            })
+            }),
+            isBigImg: false
         };
     },
     methods: {
@@ -68,6 +70,18 @@ export default {
         background-repeat: no-repeat;
         background-position: center;
         margin-bottom: 10px;
+    }
+
+    &__bigimg{
+        width: 80vw;
+        height: 80vh;
+        position: fixed;
+        left: 10vw;
+        top: 10vh;
+        background-image: v-bind("`url(${selectedImage})`");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     &__pngwing {
