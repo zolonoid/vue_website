@@ -1,7 +1,9 @@
 <template>
     <div class="slider">
-        <div v-if="isBigImg" class="slider__bigimg" @click="isBigImg=false"></div>
-        <div class="slider__img" @click="isBigImg=true"></div>
+        <div v-if="isBigImg" class="slider__bigimg" @click="isBigImg = false"></div>
+        <div class="slider__img" @click="isBigImg = true">
+            <img src="../assets/zoom.png" alt="zoom">
+        </div>
         <div class="slider__pngwing">
             <div v-for="(img, i) in imgs" :key="i"
                  class="slider__pngwing-item"
@@ -70,9 +72,22 @@ export default {
         background-repeat: no-repeat;
         background-position: center;
         margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+            width: 132px;
+            height: 132px;
+            display: none;
+        }
+
+        &:hover img {
+            display: block;
+        }
     }
 
-    &__bigimg{
+    &__bigimg {
         width: 80vw;
         height: 80vh;
         position: fixed;
