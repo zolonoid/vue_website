@@ -1,6 +1,6 @@
 <template>
     <div class="banner">
-        <div class="banner__intro">
+        <div v-if="title && text" class="banner__intro">
             <h1 class="banner__intro-title">
                 {{ title }}
             </h1>
@@ -15,8 +15,16 @@
 export default {
     props: {
         image: String,
-        title: String,
-        text: String
+        title: {
+            type: String,
+            default: "",
+            required: false
+        },
+        text: {
+            type: String,
+            default: "",
+            required: false
+        }
     }
 }
 </script>
