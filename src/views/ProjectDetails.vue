@@ -12,7 +12,7 @@
             </p>
         </div>
         <div class="project-details__slider">
-            <SliderComp></SliderComp>
+            <SliderComp :images="images"></SliderComp>
         </div>
     </div>
 </template>
