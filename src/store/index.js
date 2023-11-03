@@ -9,8 +9,8 @@ export default createStore({
         ],
         images: [
             require("../assets/project_details1.png"),
-            require("../assets/project_details1.png"),
-            require("../assets/project_details1.png")
+            require("../assets/project_details2.png"),
+            require("../assets/project_details3.png")
         ]
     }
 });

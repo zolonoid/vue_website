@@ -43,10 +43,15 @@ export default {
             });
         }
     },
+    computed: {
+        selectedImage() {
+            return this.imgs.filter(x => x.selected)[0].img;
+        }
+    }
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .slider {
     width: 100%;
     display: flex;
@@ -54,12 +59,15 @@ export default {
     align-items: center;
 
     &__img {
+        width: 100%;
         height: 799px;
         border-radius: 70px;
-        background-image: v-bind("`url(${img})`");
+        background-image: v-bind("`url(${selectedImage})`");
         background-color: #C4C4C4;
         background-size: cover;
         background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 10px;
     }
 
     &__pngwing {
